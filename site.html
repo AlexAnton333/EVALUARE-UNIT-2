@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resurse Calculator</title>
+    <style>
+        /* General */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #0073e6;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        main {
+            margin: 20px auto;
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            font-size: 1.5em;
+            color: #0073e6;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #f4f4f4;
+        }
+
+        .network-diagram img {
+            display: block;
+            max-width: 100%;
+            margin: 10px auto;
+            border-radius: 10px;
+        }
+
+        #slideshow img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #0073e6;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <p>Anton Alexandru | anton.ad.alexandru@student.utcluj.ro</p>
+    </header>
+
+    <main>
+        <section id="specifications">
+            <h2>Specificații tehnice ale stației principale de lucru</h2>
+            <table>
+                <tr>
+                    <th>Denumire Componentă</th>
+                    <th>Producător</th>
+                    <th>Parametri</th>
+                </tr>
+                <tr>
+                    <td>Procesor</td>
+                    <td>Intel</td>
+                    <td>Core i7-10700K</td>
+                </tr>
+                <tr>
+                    <td>Memorie RAM</td>
+                    <td>Corsair</td>
+                    <td>16GB DDR4</td>
+                </tr>
+                <tr>
+                    <td>Placă Video</td>
+                    <td>NVIDIA</td>
+                    <td>RTX 1070ti</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="network">
+            <h2>Structura rețelei personale și accesul la internet</h2>
+            <div class="network-diagram">
+                <img src="diagramaretea.jpg" alt="Diagrama rețelei personale">
+            </div>
+            <ul>
+                <li>Adresa MAC: 00:1A:2B:3C:4D:5E</li>
+                <li>Adresa IP: 192.168.0.1</li>
+                <li>Debit la download: 500 Mbps</li>
+                <li>Debit la upload: 300 Mbps</li>
+            </ul>
+        </section>
+
+        <section id="resources">
+            <h2>Utilizarea resurselor (slideshow)</h2>
+            <div id="slideshow">
+                <img src="resurseyoutube.png" alt="Resurse imagine 1">
+                <img src="Memorie.jpg" alt="Resurse imagine 2" style="display: none;">
+                <img src="GPU.jpg" alt="Resurse imagine 3" style="display: none;">
+				<img src="CPU.jpg" alt="Resurse imagine 3" style="display: none;">
+				<img src="DISK.jpg" alt="Resurse imagine 3" style="display: none;">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Serban Nicolae MEZA</p>
+    </footer>
+
+    <script>
+        // Slideshow logic
+        let images = document.querySelectorAll("#slideshow img");
+        let currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].style.display = "none";
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].style.display = "block";
+        }
+
+        setInterval(showNextImage, 3000); // 3 seconds interval
+    </script>
+</body>
+</html>
